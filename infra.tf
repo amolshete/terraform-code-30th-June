@@ -7,6 +7,15 @@ terraform {
   }
 }
 
+terraform {
+  
+  backend "s3" {
+    bucket = "terraform-state-file-bucket-30th-june"
+    key    = "terraform-infra-file.tf"
+    region = "ap-south-1"
+  }
+}
+
 # Configure the AWS Provider
 provider "aws" {
   region = "ap-south-1"
