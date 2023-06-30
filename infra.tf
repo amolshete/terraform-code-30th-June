@@ -86,7 +86,7 @@ resource "aws_subnet" "mumbai-subnet-1c" {
 
 resource "aws_instance" "mumbai-instance" {
   ami           = "ami-026576dd556f3a732"
-  instance_type = "t2.micro"
+  instance_type = var.mumbai_instance_type
   key_name = aws_key_pair.mumbai-key-pair.id
   subnet_id = aws_subnet.mumbai-subnet-1a.id
   associate_public_ip_address = "true"
